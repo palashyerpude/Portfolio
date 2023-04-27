@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head background-color="#portfolio">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Palash Yerpude - Portfolio</title>
+        <style>
+            /*===== VARIABLES CSS =====*/
+:root{
+  --header-height: 3rem;
+  --font-semi: 600;
+}
+
+/*===== Colores =====*/
+:root{
+  --first-color:Cadetblue;
+  --second-color: #0E2431;
+}
+
+/*===== Fuente y tipografia =====*/
+:root{
+  --body-font: 'Poppins', sans-serif;
+  --big-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.938rem;
+}
+@media screen and (min-width: 768px){
+  :root{
+    --big-font-size: 3.5rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*===== Margenes =====*/
+:root{
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+}
+
+/*===== z index =====*/
+:root{
+  --z-back: -10;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*===== BASE =====*/
+*,::before,::after{
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--second-color);
+}
+h1,h2,p{
+  margin: 0;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*===== CLASS CSS ===== */
+.section-title{
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-top: var(--mb-2);
+  margin-bottom: var(--mb-4);
+  text-align: center;
+}
+.section-title::after{
+  position: absolute;
+  content: "";
+  width: 64px;
+  height: 0.18rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+.section{
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+/*===== LAYOUT =====*/
+.bd-grid{
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-column-gap: 2rem;
+  width: calc(100% - 2rem);
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
+.l-header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(146,161,176,.15);
+}
+
+/*===== NAV =====*/
+.nav{
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--font-semi);
+}
+@media screen and (max-width: 768px){
+  .nav__menu{
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--second-color);
+    transition: .5s;
+  }
+}
+.nav__item{
+  margin-bottom: var(--mb-4);
+}
+.nav__link{
+  position: relative;
+  color: #fff;
+}
+.nav__link:hover{
+  position: relative;
+}
+.nav__link:hover::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+.nav__logo{
+  color: var(--second-color);
+}
+.nav__toggle{
+  color: var(--second-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/*Active menu*/
+.active::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+
+/*=== Show menu ===*/
+.show{
+  right: 0;
+}
+
+/*===== HOME =====*/
+.home{
+  height: calc(100vh - 3rem);
+  row-gap: 1rem;
+}
+.home__data{
+  align-self: center;
+}
+.home__title{
+  font-size: var(--big-font-size);
+  margin-bottom: var(--mb-5);
+}
+.home__title-color{
+  color: var(--first-color);
+}
+.home__social{
+  display: flex;
+  flex-direction: column;
+}
+.home__social-icon{
+  width: max-content;
+  margin-bottom: var(--mb-2);
+  font-size: 1.5rem;
+  color: var(--second-color);
+}
+.home__social-icon:hover{
+  color: var(--first-color);
+}
+.home__img{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  
+  
+  
+}
+
+/*BUTTONS*/
+.button{
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: .75rem 2.5rem;
+  font-weight: var(--font-semi);
+  border-radius: .5rem;
+}
+.button:hover{
+  box-shadow: 0 10px 36px rgba(0,0,0,.15);
+}
+
+/* ===== ABOUT =====*/
+.about__container{
+  row-gap: 2rem;
+  text-align: center;
+}
+.about__subtitle{
+  margin-bottom: var(--mb-2);
+}
+.about__img{
+  justify-self: center;
+}
+.about__img img{
+  width: 200px;
+  border-radius: .5rem;
+}
+/*=====career objective====*/
+.career__img img{
+  width: 500px;
+  border-radius: .5rem;
+  height : 250px;
+}
+
+
+/* ===== SKILLS =====*/
+.skills__container{
+  row-gap: 2rem;
+  text-align: center;
+}
+.skills__subtitle{
+  margin-bottom: var(--mb-2);
+}
+.skills__text{
+  margin-bottom: var(--mb-4);
+}
+.skills__data{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  font-weight: var(--font-semi);
+  padding: .5rem 1rem;
+  margin-bottom: var(--mb-4);
+  border-radius: .5rem;
+  box-shadow: 0 4px 25px rgba(14,36,49,.15);
+}
+.skills__icon{
+  font-size: 2rem;
+  margin-right: var(--mb-2);
+  color: var(--first-color);
+}
+.skills__names{
+  display: flex;
+  align-items: center;
+}
+.skills__bar{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--first-color);
+  height: .25rem;
+  border-radius: .5rem;
+  z-index: var(--z-back);
+}
+
+.skills__html
+{
+	width : 75%;
+}
+.skills__css
+{
+  width : 70%;
+}
+.skills__js{
+  width : 60%;
+}
+.skills__ux{
+  width : 85%;
+}
+.skills__img{
+  border-radius: .5rem;
+  height : 350px;
+  width : 450px;
+}
+.skills__NodeJs{
+  width : 85%;
+}
+.skills__Angular{
+  width : 85%;
+}
+.skills__ReactJs{
+  width : 60%;
+}
+
+/* ===== WORK =====*/
+.work__container{
+  row-gap: 2rem;
+  
+}
+.work__img{
+  box-shadow: 0 4px 25px rgba(14,36,49,.15);
+  border-radius: .5rem; 
+  position : relative;
+  overflow: hidden;
+  width:40%;
+
+}
+.work__img img{
+  transition: 1s;
+  cursor: pointer;
+}
+.work__img img:hover{
+  transform: scale(1.1);
+}
+
+
+/*=====EDUCATION=====*/
+.education__container{
+  row-gap: 2rem;
+  text-align:left;
+}
+.education__table{
+margin: 0cap;
+}
+
+.education__ul{
+justify-content: space-between;
+margin :5px;
+}
+.education__data{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position:relative  ;
+  font-weight: var(--font-semi);
+  padding: .5rem 1rem;
+  margin-bottom: var(--mb-4);
+  border-radius: .5rem;
+  box-shadow: 0 4px 25px rgba(14,36,49,.15);
+}
+
+.education__names{
+  display: flex;
+  align-items: center;
+}
+/* ===== CONTACT =====*/
+.contact__input{
+  width: 100%;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi);
+  padding: 1rem;
+  border-radius: .5rem;
+  border: 1.5px solid var(--second-color);
+  outline: none;
+  margin-bottom: var(--mb-4);
+}
+.contact__button{
+  display: block;
+  border: none;
+  outline: none;
+  font-size: var(--normal-font-size);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* ===== FOOTER =====*/
+.footer{
+  background-color: var(--second-color);
+  color: #fff;
+  text-align: center;
+  font-weight: var(--font-semi);
+  padding: 2rem 0;
+}
+.footer__title{
+  font-size: 2rem;
+  margin-bottom: var(--mb-4);
+}
+.footer__social{
+  margin-bottom: var(--mb-4);
+}
+.footer__icon{
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0 var(--mb-2)
+}
+
+/* ===== MEDIA QUERIES=====*/
+@media screen and (min-width: 768px){
+  body{
+    margin: 0;
+  }
+  .section{
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+  .section-title{
+    margin-bottom: var(--mb-6);
+  }
+  .section-title::after{
+    width: 80px;
+    top: 3rem;
+  }
+
+  .nav{
+    height: calc(var(--header-height) + 1rem);
+  }
+  .nav__list{
+    display: flex;
+    padding-top: 0;
+  }
+  .nav__item{
+    margin-left: var(--mb-6);
+    margin-bottom: 0;
+  }
+  .nav__toggle{
+    display: none;
+  }
+  .nav__link{
+    color: var(--second-color);
+  }
+
+  .home{
+    height: 100vh;
+  }
+  .home__data{
+    align-self: flex-end;
+  }
+  .home__social{
+    padding-top: 0;
+    padding-bottom: 2.5rem;
+    flex-direction: row;
+    align-self: flex-end;
+  }
+  .home__social-icon{
+    margin-bottom: 0;
+    margin-right: var(--mb-4);
+  }
+  .home__img{
+    width: 457px;
+    bottom: 15%;
+  }
+
+  .about__container, .skills__container{
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    text-align: initial;
+  }
+  .about__img img{
+    width: 300px;
+  }
+  .work__container{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1,1fr);
+    column-gap: 2rem;
+  }
+  .contact__form{
+    width: 360px;
+  }
+  .contact__container{
+    justify-items: center;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .bd-grid{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home__img{
+    right: 10%;
+  }
+}
+        </style>
+
+
+    
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">Palash</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+						 <li class="nav__item"><a href="#education" class="nav__link">Education</a></li>
+						<li class="nav__item"><a href="#career" class="nav__link">Career Objective</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Palash</span><br>Web Developer</h1>
+
+                <a href="#contact" class="button">Contact</a>
+                </div>
+
+               
+			   <div class="home__social">
+				   <a href="https://www.linkedin.com/in/sanjolie-khobragade-48a509217" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://instagram.com/palash_yerpude?igshid=ZDdkNTZiNTM=" class="home__social-icon"><i class='bx bxl-instagram' ></i></a>
+                    <a href="https://twitter.com/palash_yerpude?t=KeU1LDxxQBt2f_2uGqzi4A&s=08" class="home__social-icon"><i class='bx bxl-twitter' ></i></a>
+                    
+                </div>
+
+                <div class="home__img">  
+                    <img src="https://img.freepik.com/free-vector/nerd-concept-illustration_114360-190.jpg?w=2000"  alt="">
+                </div>
+            </section>
+
+            <!--===== ABOUT =====-->
+            <section class="about section " id="about" >
+                <h2 class="section-title">About</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="https://msingermany.co.in/wp-content/uploads/elementor/thumbs/Ms-in-Germany-8-oggcxyzbwirn0o2ry3p95cas4tjgb3kepmagfvz5f0.png" alt="Education Img">
+                    </div>
+                    
+                    <div>
+                        <h2 class="about__subtitle">I'am Palash</h2>
+                        <p class="about__text">A Front-end And Back-end Web-developer Currently,i am completed fullstack course in fullstack guru institute and i completed graduation in BSc(Computer Science) at Dhote Bandhu science college, Gondia affiliated to RTM Nagpur University.</p>           
+                    </div>                                   
+                </div>
+            </section>
+		
+
+			<!--====Education====-->
+			<section class="education section" id="education">
+			<h2 class="section-title" align="center">Education</h2>
+			<table class="education__table" border='0'align='center'cellpadding='5' >
+			<tr>
+				<td>
+				
+					<div class="education__container bd-grid">
+					 <div class="education__data">
+                        <div class="education__names">
+					<div ul >
+						<li>Bsc Computer Science
+						<li>Rashtrasant Tukadoji Maharaj Nagpur University
+						<li>Percentage (upto 3rd semester): 92.00%
+						<li>Aug 2019 -Present (Expected 2022)
+						
+					   </div>
+					   </div>
+					   </div>
+					   </div>
+				</td>
+  			    <td>
+					<img src="https://cdn.onlinewebfonts.com/svg/img_534919.png" height='100px' width='100px'>
+				</td>
+			</tr>
+			
+			<tr>
+			<td>
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLQX_f2lIQiZAXTK1vtTeYRKT-MPMtP5QZqQ&usqp=CAU" height='80px' width='80px' align='right'>
+				</td>
+				<td>
+					<div class="education__container bd-grid">
+					 <div class="education__data">
+                        <div class="education__names">
+					 <div ul>
+						    <li>Dhote Bandhu Science college ,Gondia
+						    <li>12th (HSC board)
+						    <li>Percentage 57.80% | SCIENCE
+						    <li>Feb 2019 - March 2019
+					       </div>
+						   </div>
+					   </div>
+					   </div>
+				</td>
+  			    
+			</tr>
+			<tr>
+				<td>
+					<div class="education__container bd-grid">
+					 <div class="education__data">
+                        <div class="education__names">
+					    <div ul>
+						<li>JDC High School,Gondia
+						<li>10th (SSC Board)
+						<li>Percentage: 75.60%
+						<li>March 2017
+					   </div>
+					   </div>
+					   </div>
+					   </div>
+				</td>
+  			    <td>
+					<img src="https://cdn-icons-png.flaticon.com/512/29/29302.png" height='100px' width='100px'>
+				</td>
+			</tr>
+			
+			</table>
+			</section>
+
+
+			<!--=====CAREER OBJECTIVE=====-->
+			
+				<section class="career section " id="career">
+				<h2 class="section-title">Career Objective</h2>
+					<div class="about__container bd-grid">
+						<p class="about__text">To work in a creative and challenging environment where I could constantly learn and enhance my ability to deliver successful solutions to all problems.</p>
+						<div class="career__img">
+                        <img src="https://media.istockphoto.com/id/1398059965/photo/study-the-bible.jpg?b=1&s=612x612&w=0&k=20&c=8dtNBWmYM6u9pWjUNvkG0Fjui70Tp9Deu_TJai8HyiI=" alt="">
+						</div>
+                    </div>
+				</section>
+                    
+
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">Skills</h2>
+
+                <div class="skills__container bd-grid"> 
+					<div>              
+                        <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8&w=1000&q=80" alt="" class="skills__img">
+                    </div>
+                    <div>
+                        <h2 class="skills__subtitle" align="center ">Profesional Skills</h2>
+                        <p class="skills__text"> </p>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxs-file-html skills__icon'></i>
+                                <span class="skills__name">HTML</span>
+                            </div>
+                            <div class="skills__bar skills__html"></div>
+                            <div>
+                                <span class="skills__percentage">90%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxs-file-css skills__icon'></i>
+                                <span class="skills__name">CSS</span>
+                            </div>
+                            <div class="skills__bar skills__css">
+                              
+                            </div>
+                            <div>
+                                <span class="skills__percentage">90%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-javascript skills__icon' ></i>
+                                <span class="skills__name">JAVASCRIPT</span>
+                            </div>
+                            <div class="skills__bar skills__js">
+							                               
+                            </div>
+                            <div>
+                                <span class="skills__percentage">90%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bx-code-alt skills__icon'></i>
+                                <span class="skills__name">C , C++</span>
+                            </div>
+                            <div class="skills__bar skills__ux">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">85%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-nodejs skills__icon'></i>
+                                <span class="skills__name">NodeJs</span>
+                            </div>
+                            <div class="skills__bar skills__nodejs">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">85%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-angular skills__icon'></i>
+                                <span class="skills__name">Angular</span>
+                            </div>
+                            <div class="skills__bar skills__angular">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">85%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-react skills__icon'></i>
+                                <span class="skills__name">ReactJs</span>
+                            </div>
+                            <div class="skills__bar skills__reactjs">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">80%</span>
+                            </div>
+                        </div>
+    
+						</div>
+                    </div>
+                </div>
+            </section>
+			<br>
+
+            <!--===== WORK =====-->
+            <section class="work section" id="work">
+                <h2 class="section-title" align="center">Projects</h2>
+
+                <div class="work__container bd-grid">
+				<h2 class="skills__subtitle">1 : Product Card (Using HTML,CSS)</h2>
+                <h2 class="skills__subtitle">2 : WeatherApp (Using NodeJs, MongoDb)</h2>
+                <h2 class="skills__subtitle">3 : CounterApp (Using React)</h2>
+                <h2 class="skills__subtitle">4 : Login Form</h2>
+                
+				<p class="about__text">We have taken Login form where we have two fields “username” and “password” with a submit button.When username and password are correctly entered and click on submit button then we get messege of login successed .And if entries in the given fields are mismatched with the database then we get login declined massege with a go back button.</p>
+				
+			
+				<a href="https://github.com/palashyerpude" class="button">Download Source Code</a>  
+				</div>
+                
+            </section>
+
+        	<!--===== CONTACT =====-->
+                <section class="contact section" id="contact">
+                <h2 class="section-title">Contact</h2>
+
+                <div class="contact__container bd-grid">
+				<p class="about__text" align ='center'>
+						Gmail : palashnandkishoryerpude@gmail.com
+						<br/>
+						Mobile No. : +918698431773						
+					</p>
+                    <!-- <form action="" class="contact__form">
+                        <input type="text" placeholder="Name" class="contact__input" id="name">
+                        <input type="email" placeholder="Email" class="contact__input" id="sender">
+						<input type="text" placeholder="Subject" class="contact__input" id="subject">
+                        <textarea name=""  cols="0" rows="10" class="contact__input" id="message"></textarea>				 
+                        <input type="button" value="Enviar" class="contact__button button" onclick="sendmail()">
+                    </form>	 -->
+		        </div>
+            </section>
+			
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">Palash N. Yerpude</p>
+            <div class="footer__social">
+                <a href=" www.linkedin.com/in/palash-yerpude-s1219" class="footer__icon"><i class='bx bxl-linkedin'></i></a>
+				<a href="https://instagram.com/palash_yerpude?igshid=ZDdkNTZiNTM=" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+				 <a href="https://twitter.com/palash_yerpude?t=KeU1LDxxQBt2f_2uGqzi4A&s=08" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+			</div>
+		   </footer>
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script>
+          const showMenu = (toggleId, navId) =>{
+            const toggle = document.getElementById(toggleId),
+            nav = document.getElementById(navId)
+        
+            if(toggle && nav){
+                toggle.addEventListener('click', ()=>{
+                    nav.classList.toggle('show')
+                })
+            }
+        }
+        showMenu('nav-toggle','nav-menu')
+        
+        /*===== ACTIVE AND REMOVE MENU =====*/
+        const navLink = document.querySelectorAll('.nav__link');   
+        
+        function linkAction(){
+          /*Active link*/
+          navLink.forEach(n => n.classList.remove('active'));
+          this.classList.add('active');
+          
+          /*Remove menu mobile*/
+          const navMenu = document.getElementById('nav-menu')
+          navMenu.classList.remove('show')
+        }
+        navLink.forEach(n => n.addEventListener('click', linkAction));
+        
+        /*===== SCROLL REVEAL ANIMATION =====*/
+        const sr = ScrollReveal({
+            origin: 'top',
+            distance: '80px',
+            duration: 2000,
+            reset: true
+        });
+        
+        /*SCROLL HOME*/
+        sr.reveal('.home__title',{}); 
+        sr.reveal('.button',{delay: 200}); 
+        sr.reveal('.home__img',{delay: 400}); 
+        sr.reveal('.home__social-icon',{ interval: 200}); 
+        
+        /*SCROLL ABOUT*/
+        sr.reveal('.about__img',{}); 
+        sr.reveal('.about__subtitle',{delay: 400}); 
+        sr.reveal('.about__text',{delay: 400}); 
+        
+        /*SCROLL education*/
+        sr.reveal('.education__table',{});
+        sr.reveal('.education__names',{delay:200});
+        sr.reveal('.education__ulclass',{delay:200});
+        
+        /*career objective*/
+        sr.reveal('.career__img',{delay: 600});
+        
+        /*SCROLL SKILLS*/
+        sr.reveal('.skills__subtitle',{}); 
+        sr.reveal('.skills__text',{}); 
+        sr.reveal('.skills__data',{interval: 200}); 
+        sr.reveal('.skills__img',{delay: 600});
+        
+        /*SCROLL WORK*/
+        sr.reveal('.work__img',{interval: 200}); 
+        
+        /*SCROLL CONTACT*/
+        sr.reveal('.contact__input',{interval: 200});
+        
+      </script>
+        
+        <!-- /contact1 -->
+          
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script
+          src="https://code.jquery.com/jquery-2.2.4.min.js"
+          integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+          crossorigin="anonymous"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+         
+        <script>  
+             function sendmail(){
+            
+              var name = $('#name').val();
+              var email = $('#nender').val();
+              var subject = $('#nubject').val();
+              var message = $('#message').val();
+              // var body = $('#body').val();
+              var Body='Name: '+name+'<br>Email: '+email+'<br>Subject: '+subject+'<br>Message: '+message;
+              //console.log(name, phone, email, message);
+              Email.send({
+                host : "smtp.gmail.com",
+                username :"khobragadeanshu52@gmail.com",
+                password :"ANshu270204",
+                SecureToken:"fbf31702-bb7f-4a4e-9c1c-4ccf17ee777f",
+                To: 'sanjoliekhobragade@gmail.com',
+                From: "khobragadeanshu52@gmail.com",
+                Subject: "New message on contact from "+name,
+                Body: Body
+              }).then(
+                message =>{
+                  //console.log (message);
+                  if(message=='OK'){
+                  alert('Your mail has been send. Thank you for connecting.');
+                  }
+                  else{
+                    console.error (message);
+                    alert('There is error at sending message. ')
+                    
+                  }
+                }
+              );
+            }
+            </script>
+         </script>
+
+    </body>
+</html>
